@@ -1,49 +1,97 @@
 # Secure Airport Network (Cisco Packet Tracer)
 
-This project simulates a secure and segmented airport network using Cisco Packet Tracer.  
-The network was designed to separate different areas of access through VLANs and includes a DMZ for public services.
+## Overview
+
+This project simulates a **secure airport network** designed to separate different areas of access using VLANs and includes a DMZ for public-facing services.
+The topology demonstrates key concepts of **network segmentation, security, and traffic control** in a realistic environment.
+
+---
 
 ## Project Overview
-The topology was built to demonstrate fundamental network security and segmentation concepts in a realistic airport scenario.  
-Different user groups and services are isolated into separate VLANs to improve organization, security, and traffic management.
 
-## Features
-- VLAN segmentation for different airport zones:
-  - **Authority**
-  - **Guest**
-  - **DMZ**
-- Trunk links between switches
-- Inter-VLAN routing
-- Web server deployed in the DMZ
-- Connectivity testing using:
-  - `ping`
-  - `HTTP`
+The network was built to demonstrate fundamental **network security and segmentation concepts** in an airport scenario.
+Different user groups and services are isolated into separate VLANs to improve **organization, security, and performance**.
+
+---
+
+## ⚙️ Features
+
+* VLAN segmentation for different airport zones:
+
+  * **Authority VLAN** (internal trusted network)
+  * **Guest VLAN** (public access)
+  * **DMZ VLAN** (web server zone)
+  * **Services VLAN** (internal services)
+
+* Inter-VLAN routing using **Router-on-a-Stick**
+
+* Trunk links between switches (**802.1Q**)
+
+* Extended **Access Control Lists (ACLs)** for traffic filtering
+
+* Web server deployed in the **DMZ**
+
+* Connectivity testing using:
+
+  * `ping`
+  * `HTTP`
+
+---
+
+## Security Policy
+
+* Guest network (**VLAN 30**) is allowed to:
+
+  * Access the web server via **HTTP**
+  * Ping the web server (ICMP)
+
+* Guest network is **restricted from**:
+
+  * Accessing internal networks (**Authority and Services VLANs**)
+
+---
 
 ## Technologies Used
-- Cisco Packet Tracer
-- VLAN configuration
-- Trunking
-- Inter-VLAN Routing
-- Basic network security concepts
-- DMZ deployment
+
+* Cisco Packet Tracer
+* VLAN configuration (IEEE 802.1Q)
+* Inter-VLAN Routing
+* Extended ACLs
+* Basic network security concepts
+* DMZ deployment
+
+---
 
 ## Network Segments
-- **Authority VLAN**: Internal trusted devices
-- **Guest VLAN**: Visitor/public access devices
-- **DMZ VLAN**: Public-facing server zone
+
+* **Authority VLAN**: Internal trusted devices
+* **Guest VLAN**: Visitor/public access devices
+* **DMZ VLAN**: Public-facing server zone
+* **Services VLAN**: Internal services and infrastructure
+
+---
 
 ## Objectives
-- Separate network traffic using VLANs
-- Allow controlled communication between segments
-- Host a web server in the DMZ
-- Test connectivity between devices and services
-- Practice Cisco networking fundamentals in a real-world style project
+
+* Separate network traffic using VLANs
+* Control communication between segments using ACLs
+* Host a secure web server in the DMZ
+* Test connectivity between devices and services
+* Apply real-world networking concepts in a practical scenario
+
+---
 
 ## Testing
-The following tests were performed:
-- Device-to-device connectivity with `ping`
-- Access to the DMZ web server through HTTP
-- Verification of VLAN segmentation and routing behavior
 
-## Author
+The following tests were performed:
+
+* Device-to-device connectivity using `ping`
+* Access to the DMZ web server via HTTP
+* Verification of VLAN segmentation and routing behavior
+* Confirmation that ACL rules correctly restrict unauthorized access
+
+---
+
+## 👨‍💻 Author
+
 **João Filipe Macedo**

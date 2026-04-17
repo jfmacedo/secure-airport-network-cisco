@@ -14,7 +14,7 @@ Different user groups and services are isolated into separate VLANs to improve *
 
 ---
 
-## ⚙️ Features
+## Features
 
 * VLAN segmentation for different airport zones:
 

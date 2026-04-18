@@ -7,6 +7,9 @@ This project simulates a **secure and scalable airport network** using VLAN segm
 The topology demonstrates key concepts of **network segmentation, security, and traffic control** in a realistic enterprise environment.
 
 ---
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jfmacedo/secure-airport-network-cisco/1b6804c9563c52222f06ce29eb7df5dc2f2fc82d/screenshots/Figure%208-%20Update%20Topology.jpg" width="1200">
+</p>
 
 ## Project Overview
 

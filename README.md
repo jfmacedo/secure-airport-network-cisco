@@ -2,15 +2,19 @@
 
 ## Overview
 
-This project simulates a **secure airport network** designed to separate different areas of access using VLANs and includes a DMZ for public-facing services.
-The topology demonstrates key concepts of **network segmentation, security, and traffic control** in a realistic environment.
+This project simulates a **secure and scalable airport network** using VLAN segmentation, a DMZ for public-facing services, firewall protection, and a remote data center connected via VPN.
+
+The topology demonstrates key concepts of **network segmentation, security, and traffic control** in a realistic enterprise environment.
 
 ---
 
 ## Project Overview
 
 The network was built to demonstrate fundamental **network security and segmentation concepts** in an airport scenario.
-Different user groups and services are isolated into separate VLANs to improve **organization, security, and performance**.
+
+Different user groups and services are isolated into separate VLANs to improve **organization, security, and performance**, while controlled communication is enforced through routing and access control lists (ACLs).
+
+A **DMZ** is used to host public services, and a **remote data center** simulates off-site infrastructure connected via a VPN tunnel.
 
 ---
 
@@ -19,9 +23,9 @@ Different user groups and services are isolated into separate VLANs to improve *
 * VLAN segmentation for different airport zones:
 
   * **Authority VLAN** (internal trusted network)
+  * **Flight Services VLAN** (operational systems)
   * **Guest VLAN** (public access)
-  * **DMZ VLAN** (web server zone)
-  * **Services VLAN** (internal services)
+  * **DMZ VLAN** (web & DNS servers)
 
 * Inter-VLAN routing using **Router-on-a-Stick**
 
@@ -29,7 +33,15 @@ Different user groups and services are isolated into separate VLANs to improve *
 
 * Extended **Access Control Lists (ACLs)** for traffic filtering
 
-* Web server deployed in the **DMZ**
+* Web and DNS servers deployed in the **DMZ**
+
+* Simulated **Firewall** controlling traffic between internal and external networks
+
+* **ISP Router** to simulate Internet access
+
+* **Remote Data Center** connected via **VPN tunnel**, containing:
+  * Application Server
+  * Database Server
 
 * Connectivity testing using:
 
@@ -47,7 +59,7 @@ Different user groups and services are isolated into separate VLANs to improve *
 
 * Guest network is **restricted from**:
 
-  * Accessing internal networks (**Authority and Services VLANs**)
+  * Accessing internal networks (**Authority and Flight Services VLANs**)
 
 ---
 
@@ -55,19 +67,22 @@ Different user groups and services are isolated into separate VLANs to improve *
 
 * Cisco Packet Tracer
 * VLAN configuration (IEEE 802.1Q)
-* Inter-VLAN Routing
+* Inter-VLAN Routing (Router-on-a-Stick)
 * Extended ACLs
-* Basic network security concepts
-* DMZ deployment
+* Network Segmentation
+* DMZ Design
+* Basic Firewall Simulation
+* VPN Concept (Site-to-Site)
 
 ---
 
 ## Network Segments
 
 * **Authority VLAN**: Internal trusted devices
+* **Flight Services VLAN**: Operational systems
 * **Guest VLAN**: Visitor/public access devices
 * **DMZ VLAN**: Public-facing server zone
-* **Services VLAN**: Internal services and infrastructure
+* **Remote Data Center**: External infrastructure connected via VPN
 
 ---
 
@@ -75,7 +90,8 @@ Different user groups and services are isolated into separate VLANs to improve *
 
 * Separate network traffic using VLANs
 * Control communication between segments using ACLs
-* Host a secure web server in the DMZ
+* Host secure public services in the DMZ
+* Simulate enterprise-level architecture with firewall and VPN
 * Test connectivity between devices and services
 * Apply real-world networking concepts in a practical scenario
 
@@ -89,9 +105,10 @@ The following tests were performed:
 * Access to the DMZ web server via HTTP
 * Verification of VLAN segmentation and routing behavior
 * Confirmation that ACL rules correctly restrict unauthorized access
+* Validation of connectivity to the remote data center via VPN
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **João Filipe Macedo**

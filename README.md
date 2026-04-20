@@ -134,6 +134,21 @@ In conclusion, NAT plays a critical role in this network design by enabling secu
 
 ---
 
+## Security Validation – Guest Network Isolation
+
+To validate the security of the network, connectivity tests were performed from a Guest Network device.
+
+A ping test was executed from a Guest PC (VLAN 30) to the Data Center server (10.10.10.10). The result showed 100% packet loss, confirming that access is successfully blocked by the configured ACL rules. In contrast, a second test was performed to verify external connectivity. The Guest PC was able to successfully ping the ISP router (200.0.0.1), demonstrating that internet access is allowed through NAT.
+
+This test confirms that the network is properly segmented:
+- Guest users are restricted from accessing sensitive internal resources
+- Internet access remains functional
+- Security policies are correctly enforced
+
+This behavior reflects a real-world airport network scenario where guest users must be isolated from critical infrastructure.
+
+---
+
 ## Network Segments
 
 * **Authority VLAN**: Internal trusted devices

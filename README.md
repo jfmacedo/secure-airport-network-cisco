@@ -21,6 +21,48 @@ A **DMZ** is used to host public services, and a **remote data center** simulate
 
 ---
 
+## Problem & Solution
+
+This project simulates a real airport network scenario where different user groups require controlled access to services.
+
+### Challenges
+The main challenges addressed in this project include:
+
+- Isolating guest users from internal systems  
+- Securing public services (web & DNS)  
+- Allowing controlled external connectivity  
+- Simulating enterprise architecture with remote infrastructure  
+
+### Solution
+To solve these challenges, the following technologies and strategies were implemented:
+
+- **VLAN segmentation** to isolate different network zones  
+- **Access Control Lists (ACLs)** to restrict guest traffic  
+- **DMZ (Demilitarized Zone)** to expose only necessary services (Web & DNS)  
+- **Firewall configuration** to control traffic between networks  
+- **VPN connectivity** to securely connect a remote data center  
+
+---
+
+## Traffic Flow Example
+
+Traffic Flow
+
+This example demonstrates how controlled access is enforced between the Guest Network and the DMZ using VLAN segmentation and ACL policies.
+
+1. A guest device initiates an HTTP request to the DMZ Web Server  
+2. The request is forwarded through the Guest VLAN and reaches the Core Switch  
+3. ACL policies permit only specific traffic (HTTP/ICMP) to access the DMZ  
+4. The Web Server processes the request and sends the response back to the Guest device  
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jfmacedo/secure-airport-network-cisco/f112b94a9e3925f80dc4c15974d618ad573b4f4c/screenshots/Figure%209%20-%20Traffic%20Flow%20Diagram.jpg" width="900">
+</p>
+
+This flow highlights how the network design ensures security while allowing controlled access to public services.
+
+---
+
 ## Features
 
 * VLAN segmentation for different airport zones:
